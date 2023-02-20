@@ -1,8 +1,9 @@
 class TestArticleMailer < ApplicationMailer
     def test_mail_catcher
-        @article = article
+        @article = test_article
         mail(
-            
-        subject:  'Thanks for creating Author for our amazing app')
+         to:  "amirali@gmail.com",
+        subject:  'Thanks for creating Author for our amazing app'
+        )
     end
 end

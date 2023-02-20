@@ -1,2 +1,14 @@
-<h1>TestArticles#index</h1>
-<p>Find me in app/views/test_articles/index.html.erb</p>
+# <h1>TestArticles#index</h1>
+# <p>Find me in app/views/test_articles/index.html.erb</p>
+
+
+<h1>TestArticles</h1>
+
+<ul>
+  <% @articles.each do |test_article| %>
+    <li>
+     <%= link_to test_article.title, test_article %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "New Article", new_test_article_path %>

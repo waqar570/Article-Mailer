@@ -1,0 +1,14 @@
+<h1><%= @article.title %></h1>
+
+<ul>
+  <li><%= link_to "Edit", edit_test_article_path(@article) %></li>
+  <li><%= link_to "Destroy", test_article_path(@article),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>
+
+# <h2>Books</h2>
+# <%= render @author.books %>
+
+# <h2>Add a book:</h2>
+# <%= render 'books/form' %>

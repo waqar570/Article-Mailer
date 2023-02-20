@@ -1,26 +1,27 @@
 class TestArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    @articles = TestArticle.all
   end
 
   def new
-    @article = Article.new 
+    @article = TestArticle.new 
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = TestArticle.find(params[:id])
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = TestArticle.new(test_article_params)
     if @article.save
       TestArticleMailer.test_mail_catcher(@article).deliver_now
       redirect_to(@article, :notice => 'Article is created')
+    end
   end
 
   private
 
-  def article_params
-    params.require(:author).permit(:title)
+  def testarticle_params
+    params.require(:test_article).permit(:title)
   end
 end
